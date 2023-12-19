@@ -12,6 +12,7 @@ import { Paper, CardActionArea, CardMedia, Grid, TableContainer, Table, TableBod
 
 // import image from "./cornbg.jpg";
 import image from "./cornblur.jpg";
+import { GiCorn } from "react-icons/gi";
 import { DropzoneArea } from 'material-ui-dropzone';
 import { common } from '@material-ui/core/colors';
 import Clear from '@material-ui/icons/Clear';
@@ -34,8 +35,17 @@ const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
+  dropzoneText: {
+    color: 'blue', // Add this line to set the text color to blue
+  },
+
+
   title: {
     textAlign: "center",
+    color: '#FFC300  ',
+    fontWeight: 'bold',
+    
+    fontFamily: 'Ubuntu, sans-serif',
 
   },
   clearButton: {
@@ -144,7 +154,11 @@ const useStyles = makeStyles((theme) => ({
   appbar: {
     background: '#60764D ',
     boxShadow: 'none',
-    color: 'white'
+    color: 'white',
+   
+    display: 'flex',
+    justifyContent: 'center', 
+    alignItems: 'center',
   },
   loader: {
     color: '#60764D  !important',
@@ -220,7 +234,7 @@ export const ImageUpload = () => {
       <AppBar position="static" className={classes.appbar}>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            Welcome to Corn Disease Classification
+          <GiCorn size={30}  /> Welcome to Corn Disease Classification <GiCorn size={30}  />
           </Typography>
           <div className={classes.grow} />
           
