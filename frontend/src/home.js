@@ -3,7 +3,7 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Avatar from "@material-ui/core/Avatar";
+
 import Container from "@material-ui/core/Container";
 import React from "react";
 import Card from "@material-ui/core/Card";
@@ -16,6 +16,10 @@ import { GiCorn } from "react-icons/gi";
 import { DropzoneArea } from 'material-ui-dropzone';
 import { common } from '@material-ui/core/colors';
 import Clear from '@material-ui/icons/Clear';
+import axios from "axios";
+
+
+
 
 
 
@@ -29,14 +33,13 @@ const ColorButton = withStyles((theme) => ({
     },
   },
 }))(Button);
-const axios = require("axios").default;
 
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
   dropzoneText: {
-    color: 'blue', // Add this line to set the text color to blue
+    color: 'blue', 
   },
 
 
@@ -149,7 +152,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexDirection: 'column',
     alignItems: 'center',
-    filter: 'blur(10px)',
+    filter: 'blur(0px)',
+
   },
   appbar: {
     background: '#60764D ',
@@ -173,14 +177,16 @@ export const ImageUpload = () => {
   const [isLoading, setIsloading] = useState(false);
   let confidence = 0;
 
+  axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+
   const sendFile = async () => {
     if (image) {
       let formData = new FormData();
       formData.append("file", selectedFile);
       let res = await axios({
         method: "post",
-        url: process.env.REACT_APP_API_URL,
-        data: formData,
+        url: "http://localhost:8000/predict",
+        data: formData,   //calling fastAPI backend
       });
       if (res.status === 200) {
         setData(res.data);
@@ -188,6 +194,7 @@ export const ImageUpload = () => {
       setIsloading(false);
     }
   }
+  console.log('API URL:', process.env.REACT_APP_API_URL);
 
   const clearData = () => {
     setData(null);
