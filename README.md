@@ -9,6 +9,8 @@ This project is a corn disease classification system that utilizes Convolutional
 - **React Frontend**: The user interface is developed using React, providing an interactive and responsive experience.
 
 ## Demo
+[Click to watch Demo](https://www.youtube.com/watch?v=ZOwgG6mJfcA)
+
 ### Landing page
 ![Landingpage](https://github.com/sa9arr/corn-disease-classification/blob/master/screenshots/screenshot1.png)
 
@@ -89,7 +91,9 @@ I extend my sincere appreciation to [Codebasics](https://github.com/codebasics) 
 
 ## Future Development:
 
-In subsequent phases of this project, there is a plan to extend its accessibility and usability by developing a mobile application. This application will facilitate on-the-field classification of corn diseases, providing a user-friendly and efficient tool for immediate disease identification in real-world agricultural settings. This strategic expansion aims to enhance the practical utility of the corn disease classification system, bringing the benefits directly to those involved in crop monitoring and management.
+In subsequent phases of this project, there is a plan to extend its accessibility and usability by developing a **mobile application**. This application will facilitate on-the-field classification of corn diseases, providing a user-friendly and efficient tool for immediate disease identification in real-world agricultural settings. This strategic expansion aims to enhance the practical utility of the corn disease classification system, bringing the benefits directly to those involved in crop monitoring and management.
+
+As part of future enhancements, incorporating a **negative class** comprising non-corn images during the model training process is under consideration. This addition aims to further refine the model's ability to distinguish between non-corn images and specific classes of diseases, thereby enhancing its overall classification accuracy.
 
 ## License:
 This project is licensed under the MIT License.
